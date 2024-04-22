@@ -1,0 +1,18 @@
+/* Copyright 2012 inDeLA Sagl. All Rights Reserved. */
+.formarround{float:left;box-shadow:0px 1px 10px rgba(0, 0, 0, 0.3);padding:0px 3%;margin:15px 0px 15px 5%;width:85%;}
+.setLi{padding:10px;}
+.setLi:hover{background-color:#FAFAFA;}
+#cls{background-color:#FAFAFA;}
+.setItemContent{margin-left:175px;width:445px;}
+#setloader{height:8px;margin-right:5px;}
+.scAr img{height:15px;margin-right:10px;width:15px;}
+.cntSozRemove {
+    background: url("/images/n2lbox_close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    display: inline-block;
+    height: 15px;
+    margin-left: 20px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 15px;
+}
+.cntSozRemove:hover{background: url("/images/n2lbox_close.png") no-repeat scroll 0 -15px rgba(0, 0, 0, 0) !important;}

@@ -1,0 +1,13 @@
+<?= $this->html; ?>
+<script  type="text/javascript">
+    var bSett=false;
+    $(document).ready(function(){
+        $.ajaxSetup({ cache: false });
+        $("form").live('submit', function() {
+            var form = $(this);
+            var data = form.serialize();
+            sett.post(form,data);
+            return false;
+        });          
+    });
+</script>

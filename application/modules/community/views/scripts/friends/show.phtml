@@ -1,0 +1,18 @@
+<?php if($this->viewself == true): ?>
+<div id="rCol">    
+    <div class="n2s-grid-5">
+        <div id="modBlock">
+            <?= $this->reklame(); ?>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="n2s-grid-6">
+        <?= $this->html; ?>
+    </div>
+</div>
+<script charset="utf-8" type="text/javascript">
+$(window).unload(function(){$.post("/community/friends/ajax",{task:"runaction"});});
+</script>
+<?php else:
+echo $this->html;
+endif; ?>

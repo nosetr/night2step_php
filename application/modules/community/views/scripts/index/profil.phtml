@@ -1,0 +1,27 @@
+<div id="pubArray">
+<?= $this->pubview; ?>
+<div id="rCol">
+    <div style="background-color:rgb(255, 255, 255);position:relative;">
+        <?= $this->mTitle; ?>
+        <?= $this->userbanner;?>
+    </div>
+    <div class="n2s-grid-5"<?= $this->gridtop;?>>
+        <?= $this->thumb;?>
+        <div class="n2Module">
+            <div id="modBlock">
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="n2Module">
+            <?= $this->comment; ?>
+        </div>
+    </div>
+    <div class="n2s-grid-6">
+        <?= $this->html; ?>
+    </div>
+</div>
+<script type="text/javascript">
+<?= $this->public;?>
+$(window).load(function(){if($('body,html').scrollTop() < $('#rCol').offset().top) $('body,html').scrollTop($('#rCol').offset().top);return false;});
+</script>
+</div>

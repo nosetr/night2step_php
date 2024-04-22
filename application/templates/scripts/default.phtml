@@ -1,0 +1,142 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      <?php if ($this->doctype()->isRdfa()): ?>
+      xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      <?php endif; ?>
+      >
+    <head>
+        <base href="<?php echo $this->serverUrl() ?>/" />
+        <link type="image/x-icon" rel="shortcut icon" href="/images/favicon.ico" />
+        <?php
+        echo $this->headTitle();
+        echo $this->headMeta();
+        echo $this->schema;
+        $this->headLink()->prependStylesheet('/css/global.css');
+        $this->headLink()->appendStylesheet('/css/ie.css','screen','IE');
+        echo $this->headLink();
+        echo $this->headStyle();
+        
+        $headScriptContainer = $this->jQuery()->getJavascriptFiles();
+        foreach ($headScriptContainer as $script){
+            $this->headScript()->appendFile($script);
+        }
+        $this->jQuery()->clearJavascriptFiles();
+        echo $this->jQuery();
+        
+        $session = new Zend_Session_Namespace('userlanguage');
+        if(isset($session->language)){
+            $lang = $session->language;
+        } else {
+            $lang = Zend_Registry::get('config')->language->default->key;
+        }
+        ?>
+        <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=true&amp;language=<?php echo $lang; ?>" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="mainWrap">
+            <div id="mainBody">
+                <div id="topwrapp">
+                    <div id="bannerTop"></div>
+                    <?php
+                        $module = Zend_Controller_Front::getInstance()->getRequest()->getModuleName();
+                        $controller = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();
+                        $page = $this->navigation()->findOneByController($controller);
+                        $pageFr = $this->navigation()->findOneByLabel('Friends');
+                        if(isset($page) && isset($pageFr) && $pageFr != $page){$page->setActive(true);}
+                        if($module == 'default'){
+                            $pageN = $this->navigation()->findOneByModule('community');
+                        }else{
+                            $pageN = $this->navigation()->findOneByModule('default');
+                        }
+                        if($pageN){$pageN->setActive(FALSE);}
+                    ?>
+                    <div id="header">
+                        <div id="logo"><a href="/"><img src="/images/n2s-logos/n2s_logo.png" alt="night2step"/></a></div>
+                        <div id="topnav">
+                            <?= $this->navigation()->menu(); ?>
+                        </div>
+                    </div>
+                    <div id="slog"><?= $this->translate('NightLife in 2 Steps'); ?></div>
+                    <div id="n2s-userhelper">
+                        <div class="left">
+                            <?= $this->search();?>
+                        </div>
+                        <div class="right">
+                            <?= $this->userLogin();?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="n2s-main">
+                    <div class="n2s-container">
+                        <?php if(isset($this->flashmessage)){?>
+                        <div id="n2s-message"><?= $this->translate($this->flashmessage); ?><span onclick="javascript:n2s.flash.click();"></span></div>
+                            <?php } ?>
+                        <?= $this->layout()->content; ?>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <p id="back-top">
+                        <a href="#top"><span></span><?= $this->translate('Back to Top'); ?></a>
+                </p>
+                <div class="clear"></div>
+                <div class="n2s-footer">
+                    <div class="left" style="margin-top:15px;"><?= $this->geoSwitch();?></div>
+                    <div class="right"><?= $this->LangSwitch();?></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <?= $this->headScript(); ?>
+        <script type="text/javascript">
+            if($('#n2s-advert-main').length){
+                var advpos = $('#n2s-advert-main').offset().top + $('#n2s-advert-main').height();
+                var advposleft = $('#n2s-advert-main').offset().left;
+            }
+            var indsrc = false;
+            var fullscr = false;
+            var commaction = true;
+            var jrtz = true;
+            var ntit = $("title").html();
+            $(document).ready(function() {
+                var lim = $(window).height();
+                //Messenger
+                if($('#n2s-message').length){n2s.flash.display()}
+                //Navigation
+                $('.navigation li').mouseover(function(){$(".navigation li ul").hide();$(this).children('ul').show();});
+                //ToolTip
+                $(".n2s-tooltip").tipTip({maxWidth: "auto", defaultPosition: "top"});
+                $(".n2s-tooltip-right").tipTip({maxWidth: "auto", defaultPosition: "right"});
+                $(".n2s-tooltip-left").tipTip({maxWidth: "auto", defaultPosition: "left"});
+                $(".n2s-tooltip-bottom").tipTip({maxWidth: "auto", defaultPosition: "bottom"});
+                //Back-To-Top
+                $("#back-top").hide();
+                // fade in #back-top + advertising
+                $(window).bind("scroll",function(){n2s.advert();if($(this).scrollTop()>500){$('#back-top').fadeIn();}else{$('#back-top').fadeOut();}});$('#back-top a').click(function(){$('body,html').animate({scrollTop: 0}, 800);return false;});
+                //GeoSwitch
+                var geotask = 'geolocal';var lnk=$('a#geoSwitch').attr("href");$(document).click(function(event){if(($(event.target).parents().index($('#geoswitcher'))==-1)&&($('#geoinput').is(":visible"))){$('#geoinput').hide();$("#geoposition").show();$("#autoLocButton").show();}if(($(event.target).parents().index($('#geoposition'))==0||$(event.target).parents().index($('#geoswitcher'))==0)&&$('#geoinput').is(":hidden")){$("#geoposition").hide();$("#autoLocButton").hide();$("#geoinput").show();$('input[name=geoswitch]').focus();$('input[name=geoswitch]').change(function(){var geoval=$('input[name=geoswitch]').val();$('a#geoSwitch').attr("href",lnk.replace(geotask,geoval));}).keypress(function(e){if(e.which==13){var geoval=$('input[name=geoswitch]').val();$('a#geoSwitch').attr("href",lnk.replace(geotask,geoval));if($('input[name=geoswitch]').val()!='')window.location=$('a#geoSwitch').attr("href");}});}});
+                $('a#geoSwitch').click(function(event){event.preventDefault();if($('input[name=geoswitch]').val()==''){$('input[name=geoswitch]').focus();}else{window.location=$('a#geoSwitch').attr("href");}})
+                //EDIT
+                var edOpen = false;$(document).click(function(event){if(($(event.target).parents().index($('.n2s-edit'))==-1)&&(edOpen==true)){if($('.showcasten').is(":visible")){$('.n2s-editlink').css({'background-color':'#fff','border-color':'#FFFFFF #FFFFFF #FFFFFF #999999','border-style':'solid'});$('.showcasten').hide();edOpen = false;}}});$(function(){$('.n2s-editlink').click(function(){if(edOpen==false){$(this).css({'background-color':'#eee','border-color':'#999999','border-style':'outset'});$(this).parent('.n2s-edit').children('.showcasten').show();edOpen=true;}else{$(this).css({'background-color':'#fff','border-color':'#FFFFFF #FFFFFF #FFFFFF #999999','border-style':'solid'});$(this).parent('.n2s-edit').children('.showcasten').hide();edOpen=false;}});});
+                //Placeholde
+                n2s.plchldr.check();
+                //Textarea
+                if($('textarea').length){$('textarea').autogrow();}
+                //Autoheight
+                $('#idxSFldT').css({'max-height':lim*0.7});$('.n2s-container').css({'min-height':lim});if($('#rCol').length){$('#rCol').css({'min-height' : lim});}
+                //LightBox
+                $(".n2simg-button").n2lbox({prevEffect:'none',nextEffect:'none',closeBtn:false,openEffect:'elastic',openSpeed:550,closeEffect:'elastic',closeSpeed:550,helpers:{title:{type:'inside' },buttons:{}}});
+                $(".n2s-login").n2lbox({maxWidth:350,maxHeight:600,fitToView:false,width:'70%',height:'70%',autoSize:true,closeClick:false,openEffect:'none',closeEffect:'none'});
+                $(".n2s-video").n2lbox({padding:0,margin:0,maxWidth:980,maxHeight:980,fitToView:false,width:'70%',height:'90%',autoSize:true,closeClick:false,openEffect:'elastic',openSpeed:550,closeEffect:'none',helpers:{overlay:{css:{cursor:'default'},closeClick:false},title:{type:'over'}}});
+                $(".n2s-map").n2lbox({maxWidth:800,maxHeight:600,fitToView:false,width:'70%',height:'70%',autoSize:true,closeClick:false,openEffect:'elastic',openSpeed:550,closeEffect:'elastic',closeSpeed : 550});
+                $(".n2s-phBox").n2lbox({afterShow:function(){n2s.plchldr.check();$('textarea').autogrow();n2s.arrowfade();$(".n2s-tooltip").tipTip({maxWidth: "auto", defaultPosition: "top"});},fitToView:true,autoSize:false,closeClick:false,openEffect:'elastic',openSpeed:550,closeEffect:'elastic',closeSpeed:550,aspectRatio:true,maxWidth:980,maxHeight:980,width:'70%',height:'90%',padding:0,margin:0});
+                $(".n2s-userlist").n2lbox({maxWidth:350,maxHeight:800,fitToView:true,width:'70%',height:'90%',autoSize:false,closeClick:false,openEffect:'elastic',openSpeed:550,closeEffect:'elastic',closeSpeed:550,fixed:false,scrolling:'auto',overlay:{css:{'background-color':'#eee'}}});
+                $(".n2s-message").n2lbox({afterShow:function(){n2s.plchldr.check();},maxWidth:400,maxHeight:250,fitToView:false,width:'70%',height:'70%',autoSize:false,closeClick:false,openEffect:'none',closeEffect:'none'});
+                $(".n2s-imgup").n2lbox({afterShow:function(){n2s.n2lbox.imgup();},maxWidth:800,maxHeight:600,fitToView:false,width:'70%',height:'90%',autoSize:false,closeClick:false,openEffect:'none',closeEffect:'none'});
+                $(".edit-this").n2lbox({maxWidth:500,fitToView:false,autoSize:false,closeClick:false,openEffect:'elastic',openSpeed:550,closeEffect:'elastic',closeSpeed:550,fixed:false,titlePosition:'over',scrolling:'auto',helpers:{overlay:{css:{cursor:'default'},closeClick:false},title:{type:'outside'}}});
+            });
+            <?= $this->commentsRunAction();?>
+        </script>
+    </body>
+</html>

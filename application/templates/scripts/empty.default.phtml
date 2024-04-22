@@ -1,0 +1,199 @@
+<?php echo $this->doctype('XHTML1_RDFA'); ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      <?php if ($this->doctype()->isRdfa()): ?>
+      xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      <?php endif; ?>>
+    <head>
+        <?php 
+        echo $this->headTitle();
+        echo $this->headMeta();
+        echo $this->headLink();
+        echo $this->headStyle();
+        echo $this->headScript();
+        echo $this->jQuery();
+        ?>
+        <link type="image/x-icon" rel="shortcut icon" href="<?= $this->baseUrl(); ?>images/favicon.ico"></link>
+        <link type="text/css" rel="stylesheet" media="screen" href="<?= $this->baseUrl(); ?>css/global.css"></link>
+        <script type="text/javascript" src="<?= $this->baseUrl(); ?>js/jquery/lightbox/jquery.mousewheel-3.0.6.pack.js"></script>
+        <script type="text/javascript" src="/js/jquery/lightbox/source/jquery.n2lbox.pack.js?v=2.0.4"></script>
+        <script type="text/javascript" src="<?= $this->baseUrl(); ?>js/jquery/lightbox/source/helpers/jquery.n2lbox-buttons.js?v=2.0.4"></script>
+        <script type="text/javascript" src="<?= $this->baseUrl(); ?>js/jquery/lightbox/source/helpers/jquery.n2lbox-thumbs.js?v=2.0.4"></script>
+        <script src="<?= $this->baseUrl(); ?>js/tooltip/jquery.tipTip.js" type="text/javascript"></script>
+        <base href="<?php echo $this->serverUrl() ?>/">
+    </head>
+    <body>
+        <div id="page">
+            <?= $this->layout()->content; ?>
+        </div>
+    </body>
+    <!--ToolTip-->
+    <script type="text/javascript" charset="utf-8">
+        $(function(){
+            $(".n2s-tooltip").tipTip({maxWidth: "auto", defaultPosition: "top"});
+            $(".n2s-tooltip-right").tipTip({maxWidth: "auto", defaultPosition: "right"});
+            $(".n2s-tooltip-left").tipTip({maxWidth: "auto", defaultPosition: "left"});
+            $(".n2s-tooltip-bottom").tipTip({maxWidth: "auto", defaultPosition: "bottom"});
+        });
+    </script>
+    <!--ImageLoader-->
+    <script src="<?= $this->baseUrl(); ?>js/jquery/lazyload.js" charset="utf-8" type="text/javascript"></script>
+    <!--jquery.contenloader-->
+    <script src="<?= $this->baseUrl(); ?>js/jquery/scroll.content.loader.js" charset="utf-8" type="text/javascript"></script>
+    <script charset="utf-8" type="text/javascript">
+        //LazyLoad for images
+        $(function() {
+            $("img").lazyload({
+                effect : "fadeIn",
+                failurelimit : 500,
+                event: "scrollstop"
+            });
+        });
+    </script>
+    <!--LightBox-->
+    <script type="text/javascript" charset="utf-8">
+    $(function() {
+            $(".n2simg-button").n2lbox({
+                    prevEffect		: 'none',
+                    nextEffect		: 'none',
+                    closeBtn		: false,
+                    openEffect	: 'elastic',
+                    openSpeed : 550,
+                    closeEffect	: 'elastic',
+                    closeSpeed : 550,
+                    helpers		: { 
+                            title	: { type : 'inside' },
+                            buttons	: {}
+                    }
+            });
+            
+            $(".n2s-login").n2lbox({
+                    maxWidth	: 800,
+                    maxHeight	: 600,
+                    fitToView	: false,
+                    width		: '70%',
+                    height		: '70%',
+                    autoSize	: true,
+                    closeClick	: false,
+                    openEffect	: 'none',
+                    closeEffect	: 'none'
+            });
+            
+            $(".n2s-video").n2lbox({
+                    maxWidth	: 800,
+                    maxHeight	: 600,
+                    fitToView	: false,
+                    width		: '70%',
+                    height		: '70%',
+                    autoSize	: true,
+                    closeClick	: false,
+                    openEffect	: 'elastic',
+                    openSpeed : 550,
+                    closeEffect	: 'elastic',
+                   // 'hideOnOverlayClick' : false,
+                    closeSpeed : 550,
+                   // titlePosition : 'over',
+                    helpers: {
+				overlay: {
+                                        css: {
+						cursor: 'default'
+					},
+					closeClick: false
+				},
+				title: {
+					type: 'over' // 'float', 'inside', 'outside' or 'over'
+				}
+			}
+            });
+            
+            $(".n2s-map").n2lbox({
+                    maxWidth	: 800,
+                    maxHeight	: 600,
+                    fitToView	: false,
+                    width		: '70%',
+                    height		: '70%',
+                    autoSize	: true,
+                    closeClick	: false,
+                    openEffect	: 'elastic',
+                    openSpeed : 550,
+                    closeEffect	: 'elastic',
+                    closeSpeed : 550
+            });
+            
+            $(".n2s-phBox").n2lbox({
+                    fitToView	: true,
+                    autoSize	: false,
+                    closeClick	: false,
+                    openEffect	: 'elastic',
+                    openSpeed : 550,
+                    closeEffect	: 'elastic',
+                    closeSpeed : 550,
+                    aspectRatio: true,
+                    maxWidth	: 980,
+                    maxHeight	: 980,
+                    width		: '70%',
+                    height		: '90%',
+                    padding     : 0,
+                    margin      : 0
+            });
+            
+            $(".n2s-userlist").n2lbox({
+                    maxWidth	: 350,
+                    maxHeight	: 800,
+                    fitToView	: true,
+                    width		: '70%',
+                    height		: '90%',
+                    autoSize	: false,
+                    closeClick	: false,
+                    openEffect	: 'elastic',
+                    openSpeed : 550,
+                    closeEffect	: 'elastic',
+                    closeSpeed : 550,
+                    fixed       : false,
+                    scrolling: 'auto', // 'auto', 'yes' or 'no'
+                    overlay : {
+                        css : {
+                            'background-color' : '#eee'
+                        }
+                    } 
+            });
+            
+            $(".edit-this").n2lbox({
+                    maxWidth	: 500,
+                    //maxHeight	: 600,
+                    fitToView	: false,
+                    //width		: '70%',
+                    //height		: 500,
+                    autoSize	: false,
+                    closeClick	: false,
+                    openEffect	: 'elastic',
+                    openSpeed : 550,
+                    closeEffect	: 'elastic',
+                    closeSpeed : 550,
+                    fixed       : false,
+                    titlePosition : 'over',
+                    scrolling: 'auto', // 'auto', 'yes' or 'no'
+                    helpers: {
+				overlay: {
+                                        css: {
+						cursor: 'default'
+					},
+					closeClick: false
+				},
+				title: {
+					type: 'outside' // 'float', 'inside', 'outside' or 'over'
+				}
+			}
+            });
+    });
+    </script>
+<script type="text/javascript">
+$(function() {
+    if($('textarea').length){
+        $('textarea').autogrow();
+    }
+});
+</script>
+    
+
+</html>

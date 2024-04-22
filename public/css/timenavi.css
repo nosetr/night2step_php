@@ -1,0 +1,32 @@
+div#timeArrey{background: url("/images/time-line.png") repeat-y scroll 545px 0pt transparent;}
+div#timeArrey .date{margin-bottom: 20px;height:25px;border: 5px solid #FFFFFF;}
+div#timeArrey .date .d1{text-align: center;width: 150px;margin-right: 90px;border-radius: 8px 8px 8px 8px;-ms-border-radius: 8px 8px 8px 8px;-o-border-radius: 8px 8px 8px 8px;-webkit-border-radius: 8px 8px 8px 8px;-moz-border-radius: 8px 8px 8px 8px;}
+div#timeArrey .date .year{cursor: default;background-color: #CC0000;}
+div#timeArrey .date .month{transition: all 1s ease 0s;-ms-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;-moz-transition: all 1s ease 0s;background-color: #333333;cursor: pointer;}
+div#timeArrey .date .month:hover{background-color: #5A5A5A;}
+div#timeArrey .date2{border-top: 5px solid #FFFFFF;min-height:25px;margin-bottom: 10px;}
+div#timeArrey .dateDay{transition: all 2s ease 0s;-ms-transition: all 2s ease 0s;-o-transition: all 2s ease 0s;-webkit-transition: all 2s ease 0s;-moz-transition: all 2s ease 0s;margin-right: 10px;text-align: right;width: 120px;border-radius: 0 8px 8px 8px;-ms-border-radius: 0 8px 8px 8px;-o-border-radius: 0 8px 8px 8px;-webkit-border-radius: 0 8px 8px 8px;-moz-border-radius: 0 8px 8px 8px;background-color: #999999;}
+div#timeArrey .dateDay:hover{background-color:#717171;}
+div#timeArrey .date .d1,div#timeArrey .dateDay{box-shadow:-1px 2px 3px rgba(0, 0, 0, 0.3);text-transform: capitalize;height: 16px;padding: 5px 15px 4px;color: #fff; font-weight: bold;float: right;}
+div#timeArrey .date2 .dateAlb{box-shadow:-1px 2px 3px rgba(0, 0, 0, 0.3);margin:0 200px 0 0; padding:4px; border: 1px solid #C9C9C9; border-radius: 8px 0 8px 8px;-ms-border-radius: 8px 0 8px 8px;-o-border-radius: 8px 0 8px 8px;-webkit-border-radius: 8px 0 8px 8px;-moz-border-radius: 8px 0 8px 8px;}
+div#timeArrey .date2 .dateAlb img{margin:5px 2px;}
+div#timeArrey .date2 .dateAlb .eBox img{width:123px;height:123px;}
+#dateNaviLink{float:left;position:inherit;margin-top:10px;}
+#dateNaviLink .navYear{cursor:pointer;font-weight:bold;}
+#dateNaviLink .navYear:hover{text-decoration:underline;}
+#dateNaviLink .navHover{border-left:5px solid #555555;margin-bottom:5px;padding-left:10px;}
+#dateNaviLink .disabledY{border-left:5px solid #999999 !important;}
+#dateNaviLink .disabledY .navYear{color:#999999 !important;}
+#dateNaviLink .disabledY .navYear:hover{color:inherit !important;}
+#dateNaviLink ul{margin:0;}
+#dateNaviLink .disabledY li{color:#999999;}
+#dateNaviLink li{color:#CC0000;font-weight:bold;cursor:pointer;}
+#dateNaviLink li:hover{color:inherit;transition: color 0.2s ease-out 0s;-ms-transition: color 0.2s ease-out 0s;-o-transition: color 0.2s ease-out 0s;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;text-decoration: underline;}
+#dateNaviLink li.navM{padding-left:15px;}
+#dateNaviLink li.activeNav{color: inherit;background: url("/images/text2987.png") no-repeat scroll 3px 5px #FFFFFF;}
+.EVBox{position: relative;}
+.EVBox .EVInfo{width:138px;display:none;background-color: #FFFFFF;box-shadow:0 1px 10px rgba(0, 0, 0, 0.3);left: -13px;padding: 10px;position: absolute;z-index: 100;top: -140px;}
+.EVBox:hover .EVInfo{display: block;}
+.EVBox:hover .EVInfo a{color: inherit;}
+.EVBox:hover .EVInfo a:hover{color: #cc0000;}
+.EVBox .EVInfo img{margin:0;}

@@ -1,0 +1,49 @@
+Host: www.night2step.com
+User-agent: *
+
+Sitemap: http://www.night2step.com/sitemap.xml.gz
+
+Disallow: /404
+Disallow: /administrator
+Disallow: /administrator/
+Disallow: /component/
+Disallow: /de
+Disallow: /de/
+Disallow: /default/
+Disallow: /en
+Disallow: /en/
+Disallow: /events/item/
+Disallow: /events/itemlist/
+Disallow: /events/userlist/
+Disallow: /events/category
+Disallow: /geosearch/
+Disallow: /home
+Disallow: /index.php
+Disallow: /index.php/
+Disallow: /index.php*
+Disallow: /news
+Disallow: /news/
+Disallow: /nosetr/
+Disallow: /partybilder
+Disallow: /partybilder/
+Disallow: /plugins/
+Disallow: /videos/viewvideo/
+Disallow: /_QQQ_/
+Disallow: /mincachgzip*
+Disallow: /radar*
+
+Disallow: /ajax/*
+Disallow: /message/*
+Disallow: /oauth/*
+Disallow: */geocode/*
+Disallow: /Error/*
+Disallow: /*.svg
+Disallow: */map/*
+Disallow: */standalone/*
+Disallow: /%5C%22/*
+Disallow: /*.html
+Disallow: /fonts/*
+Disallow: /*.woff
+Disallow: /*.cfc
+Disallow: /community/*
+

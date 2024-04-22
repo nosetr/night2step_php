@@ -1,0 +1,13 @@
+<div id="ajaxload" style="display: none;margin-top: 30px;">
+    <img src="/images/ajax/ajax-loader1.gif" alt=""/>
+</div>
+<?= $this->html;?>
+<script charset="utf-8" type="text/javascript">
+    $(function() {
+        if($('textarea').length){
+            $('textarea').autogrow();
+        }
+    });
+    
+    <?= $this->to;?>
+</script>

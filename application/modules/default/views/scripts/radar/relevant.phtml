@@ -1,0 +1,47 @@
+<div id="timeMessage"></div>
+<?= $this->html; ?>
+<div id="radius"></div>
+<div id="timeContent">
+    <div id="timeArrey"></div>
+    <div id="ajaxload" style="padding: 0 0 15px 527px;">
+        <img src="/images/ajax/ajax-loader1.gif" alt=""/>
+    </div>
+</div>
+
+<script  type="text/javascript">
+var flink='/radar/relevant/<?= $this->link;?>';
+var gSearchDef='<?= $this->gsearch;?>';
+var aSuppressScroll=false;
+var bSuppressScroll=false;
+var flistsearch=true;
+var slistsearch=true;
+var navData="";
+var unvisib="";
+if($('#archiveLink').length)
+    var arhref=$('#archiveLink').parent().attr('href');
+$(function(){
+    $(window).load(function(){
+        if($('#timeContent').height()<$(window).height()){
+            window.bSuppressScroll=true;
+            $('#timeContent').css('min-height',$(window).height()+'px');
+            list.first(flink);
+        }
+    });
+    $(window).scroll(function(){
+        list.navi();
+        if(($(window).scrollTop()>=$('body').height()-$(window).height()-600)&&window.bSuppressScroll==false&&window.aSuppressScroll==true){
+            $('#ajaxload').show();
+            var time=$('.eBox:last').attr('id');
+            var linkscroll='/radar/relevant/<?= $this->link;?>';
+            list.next(linkscroll+time);
+            window.bSuppressScroll=true;
+        }
+        if($(window).scrollTop()>$('.n2s-main').offset().top+$('#modBlock').height()){
+            $('#dateNaviLink').css({'position':'fixed','top':'0'});
+        }
+        if($(window).scrollTop()<=$('.n2s-main').offset().top+$('#modBlock').height()){
+            $('#dateNaviLink').css('position', 'inherit');
+        }
+    });
+});
+</script>

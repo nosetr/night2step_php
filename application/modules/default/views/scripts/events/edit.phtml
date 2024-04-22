@@ -1,0 +1,37 @@
+<div style="margin-bottom: 20px;"><?= $this->breadcrumbs; ?></div>
+<div id="rCol">
+    <div class="n2s-grid-5">
+        <div id="modBlock">
+            <?= $this->userMaybeFriends(); ?>
+            <div class="clear"></div>
+            <?= $this->reklame(); ?>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="n2s-grid-6">
+        <?= $this->html; ?>
+    </div>
+</div>
+<script charset="utf-8" type="text/javascript">
+if($("#glist").is(":checked")){
+    $("#glistduration-label").children().show();$(".tag_glistduration").show();
+    $("#glistendduration-label").children().show();$(".tag_glistendDuration").show();
+    $("#glistdescription-label").children().show();$(".tag_glistdescription").show();
+    $("#glistcount-label").children().show();$(".tag_glistcount").show();
+    $("#glistemail-label").children().show();$(".tag_glistemail").show();
+}
+$("#glist").click(function(){
+    if(this.checked){
+        $("#glistduration-label").children().show();$(".tag_glistduration").show();
+        $("#glistendduration-label").children().show();$(".tag_glistendDuration").show();
+        $("#glistdescription-label").children().show();$(".tag_glistdescription").show();
+        $("#glistcount-label").children().show();$(".tag_glistcount").show();
+        $("#glistemail-label").children().show();$(".tag_glistemail").show();
+    }else{
+        $("#glistduration-label").children().hide();$(".tag_glistduration").hide();
+        $("#glistendduration-label").children().hide();$(".tag_glistendDuration").hide();
+        $("#glistdescription-label").children().hide();$(".tag_glistdescription").hide();
+        $("#glistcount-label").children().hide();$(".tag_glistcount").hide();
+        $("#glistemail-label").children().hide();$(".tag_glistemail").hide();
+    }
+});</script>

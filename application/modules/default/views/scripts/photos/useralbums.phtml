@@ -1,0 +1,16 @@
+<div id="rCol">
+    <div class="n2s-grid-5">
+        <div class="n2Module">
+            <?= $this->comment; ?>
+        </div>
+        <?= $this->userMaybeFriends($this->curuser); ?>
+        <div class="clear"></div>
+        <?= $this->reklame(); ?>
+        <div class="clear"></div>
+    </div>
+    <div class="n2s-grid-6">
+        <?= $this->breadcrumbs;?>
+        <?= $this->imghtml;?>
+    </div>
+</div>
+<?= $this->js;?>

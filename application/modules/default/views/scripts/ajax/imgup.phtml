@@ -1,0 +1,29 @@
+<div id="n2lbox-title" style="border-bottom: 1px solid rgb(187, 187, 187);"><h2 style="margin: 0px;"><?= $this->title;?></h2></div>
+<div id="n2lbox-mainarray">
+    <ul id="n2lbox-menu">
+        <li><a class="active-n2l" href="/ajax/albums"><?= $this->translate('My photos');?></a></li>
+        <li><a class="noactive-n2l" href="/ajax/upload<?= $this->target; ?>"><?= $this->translate('Upload a photo');?></a></li>
+        <li><a class="noactive-n2l" href="/ajax/remove"><?= $this->translate('Remove a photo');?></a></li>
+    </ul>
+    <div id="n2s-imgup-mbox">
+            <div id="n2lbox-loading"></div>
+        <div id="n2s-imgup-box">
+        </div>
+        <div class="clear"></div>
+        <div style="width:100%;border-top: 1px solid rgb(187, 187, 187);height: 50px;bottom: 0px; position: absolute;">
+            <div id="submit-element" style="margin: 10px 30px;">
+                <input id="n2lbox-submit" disabled="disabled" onclick="n2s.n2lbox.<?= $this->js;?>()" class="button special" type="submit" value="<?= $this->translate('save'); ?>" name="submit"/>
+                <input id="n2lbox-chansel" style="margin-left: 10px;" onclick="$.n2lbox.close();" class="button special" type="submit" value="<?= $this->translate('cancel'); ?>" name="submit"/>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    var subscribe = false;
+    $(document).ready(function(){
+        $('.active-n2l').live("click", function(e){e.preventDefault();n2s.n2lbox.link(this);});
+        $('.noactive-n2l').live("click", function(e){e.preventDefault();n2s.n2lbox.link(this);});
+        $('.n2lbox-albinfoboxlink').live("click", function(e){e.preventDefault();n2s.n2lbox.link(this);});
+    });
+</script>

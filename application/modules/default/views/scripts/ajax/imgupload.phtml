@@ -1,0 +1,21 @@
+<div id="n2s-content-start"  style="margin: 10px 10px 10px 0pt;"><b><?= $this->translate('Image upload'); ?></b></div>
+<div id="plupload" style="display: none;">
+    <div id="droparea">
+        <p><?= $this->translate('Drag & Drop Image Files'); ?></p>
+        <span class="or"><?= $this->translate('or'); ?></span>
+        <a href="#" id="browse"><?= $this->translate('select'); ?></a>
+    </div>
+    <div id="filelist"></div>
+</div>
+<script type="text/javascript">
+    var showOrHide = false;
+$('#n2s-content-start').click(function() {
+    if ( showOrHide == true ) {
+        $('#plupload').slideUp();
+        showOrHide = false;
+    } else {
+        $('#plupload').slideDown();
+        showOrHide = true;
+    }
+});
+</script>

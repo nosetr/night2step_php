@@ -1,0 +1,20 @@
+/* 
+    Document   : photo
+    Created on : 18.05.2012, 11:33:31
+    Author     : nosetr
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body{margin:0 !important;padding:0;}
+#pCol{width:100%;float:left;}
+#n2s-grid-right{width:36%;float:right;}
+#n2s-grid-right .n2s-thumb{float:left;}
+#n2s-grid-left{position:relative;height:100%;overflow:hidden;text-align:center;width:64%;float:left;background-color:#111111;}
+#n2s-grid-left img{max-height:100%;max-width:100%;}
+#n2s-grid-left #phNaviBack{opacity:0.2;height:100%;left:0;position:absolute;top:0;width:20%;}
+#n2s-grid-left #phNaviBack:hover{opacity:1;}
+#n2s-grid-left #phNaviNext{opacity:0.2;height:100%;right:0;position:absolute;top:0;width:20%;}
+#n2s-grid-left #phNaviNext:hover{opacity:1;}
+#n2s-grid-left .phArrow{display:none;}
+#n2s-grid-left:hover .phArrow{display:block;}

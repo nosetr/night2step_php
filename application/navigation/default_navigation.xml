@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : navigation.xml
+    Created on : 29. September 2011, 18:49
+    Author     : nosetr
+    Description:
+        Purpose of the document follows.
+-->
+
+<configdata>
+    <nav>
+        <home>
+            <label>Home</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>index</action>
+        </home>
+        <community>
+            <label>Community</label>
+            <module>community</module>
+            <controller>index</controller>
+            <action>index</action>
+            
+            <pages>
+                <friends>
+                    <label>Friends</label>
+                    <module>community</module>
+                    <controller>friends</controller>
+                    <action>index</action>
+                    <resource>community</resource>
+                </friends>
+                <msg>
+                    <label>Messages</label>
+                    <module>community</module>
+                    <controller>messages</controller>
+                    <action>index</action>
+                    <resource>community</resource>
+                </msg>
+            </pages>
+        </community>
+        <events>
+            <label>Events</label>
+            <module>default</module>
+            <controller>events</controller>
+            <action>index</action>
+            
+            <pages>
+                <userevents>
+                    <label>My Events</label>
+                    <module>default</module>
+                    <controller>events</controller>
+                    <action>myevents</action>
+                    <resource>community</resource>
+                </userevents>
+            </pages>
+        </events>
+        <venues>
+            <label>Venues</label>
+            <module>default</module>
+            <controller>venues</controller>
+            <action>index</action>
+        </venues>
+        <photos>
+            <label>Photos</label>
+            <module>default</module>
+            <controller>photos</controller>
+            <action>index</action>
+            
+            <pages>
+                <userphotos>
+                    <label>My Photos</label>
+                    <module>default</module>
+                    <controller>photos</controller>
+                    <action>myphotos</action>
+                    <resource>community</resource>
+                </userphotos>
+            </pages>
+        </photos>
+        <!--
+        <videos>
+            <label>Movies</label>
+            <module>default</module>
+            <controller>movies</controller>
+            <action>index</action>
+        </videos>
+        -->
+    </nav>
+</configdata>

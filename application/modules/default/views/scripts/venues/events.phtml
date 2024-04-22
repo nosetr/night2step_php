@@ -1,0 +1,10 @@
+<?= $this->headLink()->appendStylesheet('/css/venues.css'); ?>
+<?= $this->html; ?>
+
+<script  type="text/javascript">
+$(function(){
+    if ($('.n2s-grid-6').height() < $(window).height()){
+            $('.n2s-grid-6').css('min-height', $(window).height()+'px');
+    }
+});
+</script>

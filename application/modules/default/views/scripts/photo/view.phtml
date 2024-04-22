@@ -1,0 +1,17 @@
+<?= $this->html;?>
+<script type="text/javascript">
+    $(function () {
+        $('body').keyup(function(event){
+            if (event.keyCode == 39){
+                if($('#n2lBoxPhNav-next').length)
+                    n2s.n2lbox.photo($('#n2lBoxPhNav-next'));
+            }
+            if (event.keyCode == 37) {
+                if($('#n2lBoxPhNav-prev').length)
+                    n2s.n2lbox.photo($('#n2lBoxPhNav-prev'));
+                
+            }
+        });
+        $('.n2lBoxPhNav').live("click", function(e){e.preventDefault();n2s.n2lbox.photo(this);}); 
+    });
+</script>

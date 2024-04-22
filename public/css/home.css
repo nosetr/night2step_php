@@ -1,0 +1,26 @@
+/* Copyright 2012 inDeLA Sagl. All Rights Reserved. */
+.modSurH{box-shadow:0 0 10px rgba(0, 0, 0, 0.2);margin:10px;padding:10px 10px 0;}
+#n2s-albcontent .n2s-albbox{display:inline-block;margin:10px 10px 0 10px;position:relative;overflow:hidden;}
+#n2s-albcontent .n2s-albsur{overflow:hidden;}
+#n2s-albcontent .n2s-albthumb{display:inline-block;text-align:center;background:none repeat scroll 0 0 #F1F1F1;height:150px;overflow:hidden;vertical-align:top;width:225px;}
+#n2s-albcontent .n2s-albthumb img{border:0 none;}
+#n2s-albcontent .gdyf{background:none repeat scroll 0 0 rgba(0, 0, 0, 0.5);bottom:0;max-height:36px;padding:4px 0 10px 5px;position:absolute;max-height:10px;transition:max-height 0.5s ease 0.2s;-ms-transition:max-height 0.5s ease 0.2s;-o-transition:max-height 0.5s ease 0.2s;-webkit-transition:max-height 0.5s ease 0.2s;-moz-transition:max-height 0.5s ease 0.2s;}
+#n2s-albcontent .n2s-albsur:hover .gdyf{max-height:100px;}
+#n2s-albcontent .n2s-albtitle{color:white;font-weight:lighter;text-align:left;top:0;font-weight:bold;width:220px;}
+#n2s-albcontent .n2s-albtitle .description a,a.img_link{color:#FFF;}
+#n2s-albcontent .n2s-albtitle .n2s-albname{font-weight:bold;margin-right:5px;max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;float:left;}
+#n2s-albcontent .n2s-albtitle .description{float:left;margin-top:5px;font-weight:normal;width: 100%;}
+#n2s-albcontent .n2s-albtitle .description div{cursor:default;max-height:126px;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#n2s-albcontent .n2s-albtitle .description a,a.img_link{color:#FFF;}
+.n2s-camera{cursor:default;background:url("/images/camera_white.png") no-repeat scroll 0 4px transparent;font-weight:bold;padding:0 5px 0 14px;float:right;}
+.adMod{font-size:10px;}
+.hhelp{font-size:10px;line-height:1.8;}
+.smlMod{width:450px;}
+.smlMod #n2s-albcontent .n2s-albthumb{width:215px;}
+.smlMod #n2s-albcontent .n2s-albtitle{width:210px;}
+.smlMod #n2s-albcontent .n2s-albtitle .n2s-albname{max-width:165px;}
+.modSurH #n2s-albcontent .n2s-albbox{height:150px;margin:10px 5px 0;overflow:hidden;width:225px;float:left;}
+.smlMod #n2s-albcontent .n2s-albbox{width: 215px !important;}
+.evArM{float:left;margin:15px 6px 0;outline:1px dotted #999999;overflow:hidden;padding:2.1% 2%;width:420px;}
+.smlMod .evArM{width:96%;margin:15px 0 0;}
+.n2Module .LBox h3{background-color:transparent;margin:5px 0;padding:0;}

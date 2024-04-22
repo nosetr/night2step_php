@@ -1,0 +1,59 @@
+span.customStyleSelectBox{font-size:11px;background-color:#f5f0de;color:#7c7c7c;padding:5px 7px;border:1px solid #e7dab0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px 5px;}
+span.customStyleSelectBox.changed{background-color:#f0dea4;}
+.customStyleSelectBoxInner{background:url("/images/canvas-list-nav-item-arrow-.gif") no-repeat center right;}
+#n2s-albcontent .n2s-albbox{display:inline-block;margin:10px 10px 0 10px;position:relative;overflow:hidden;}
+#n2s-albcontent .n2s-albbox:hover .alb_edit{display:block;}
+#n2s-albcontent .n2s-albthumb{display:inline-block;text-align:center;background:none repeat scroll 0 0 #F1F1F1;height:196px;overflow:hidden;vertical-align:top;width:345px;}
+#n2s-albcontent .n2s-albthumb img{border:0 none;}
+#n2s-albcontent .n2s-albsur{overflow:hidden;}
+#n2s-albcontent .gdyf{background:none repeat scroll 0 0 rgba(0, 0, 0, 0.5);bottom:0;max-height:36px;padding:4px 0 10px 5px;position:absolute;max-height:10px;transition:max-height 0.5s ease 0.2s;-ms-transition:max-height 0.5s ease 0.2s;-o-transition:max-height 0.5s ease 0.2s;-webkit-transition:max-height 0.5s ease 0.2s;-moz-transition:max-height 0.5s ease 0.2s;}
+#n2s-albcontent .n2s-albsur:hover .gdyf{max-height:100px;}
+#n2s-albcontent .n2s-albtitle{color:white;font-weight:lighter;text-align:left;top:0;font-weight:bold;width:340px;}
+#n2s-albcontent .n2s-albtitle .n2s-albname{font-weight:bold;margin-right:5px;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;float:left;}
+#n2s-albcontent .n2s-albtitle .description{float:left;margin-top:5px;font-weight:normal;width: 100%;}
+#n2s-albcontent .n2s-albtitle .description div{cursor:default;max-height:126px;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#n2s-albcontent .n2s-albtitle .description a,a.img_link{color:#FFF;}
+.n2s-imgajaxpage .n2s-photo-thumb{position:relative;float:left;margin:3px;background:none repeat scroll 0 0 #F1F1F1;height:128px;width:128px;}
+.n2s-imgajaxpage .n2s-photo-thumb .n2s-photo-thumb-text{background-color:#FFFFFF;display:none;box-shadow:0 1px 10px rgba(0,0,0,0.3);padding:155px 10px 10px;position:absolute;width:138px;top:-15px;left:-15px;}
+.n2s-imgajaxpage .n2s-photo-thumb .n2s-photo-thumb-text a{color:inherit;}
+.n2s-imgajaxpage .n2s-photo-thumb .n2s-photo-thumb-text a:hover{color:#CC0000;}
+.n2s-imgajaxpage .n2s-photo-thumb .n2s-photo-thumb-text .n2s-photo-thumb-textinfohits{cursor:default;background:url("/images/auge.png") no-repeat scroll 3px 4px transparent;color:#999999;font-weight:bold;padding:0 5px 0 24px;}
+.n2s-imgajaxpage .n2s-photo-thumb .n2s-photo-thumb-text .n2s-photo-thumb-textinfocomm{cursor:default;background:url("/images/comment.png") no-repeat scroll 3px 3px transparent;color:#999999;font-weight:bold;padding:0 0 0 21px;}
+.n2s-imgajaxpage .n2s-photo-thumb:hover .n2s-photo-thumb-text{display:block;z-index:22;}
+.n2s-imgajaxpage .n2s-photo-thumb img{width:128px;height:128px;}
+.n2s-imgajaxpage .n2s-photo-thumb:hover img{top:-3px;left:-3px;width:134px;height:134px;z-index:23;position:absolute;}
+.n2s-imgajaxpage .n2s-photo-thumb .img_delete{z-index:20;border:1px solid #FFFFFF;height:19px;position:absolute;right:6px;top:6px;width:19px;background:url("/images/photo_icons.png") no-repeat scroll 1px -60px #000000;height:17px;margin:4px;padding:0;position:absolute;right:0;top:0;width:17px;opacity:0.5;cursor:pointer;display:none;}
+.n2s-imgajaxpage .n2s-photo-thumb:hover .img_delete{z-index:24;display:block;opacity:0.8;}
+.n2s-imgajaxpage .n2s-photo-thumb .checked{background:url("/images/removed.png") no-repeat scroll 0 0 transparent !important;display:block !important;height:128px !important;margin:0 !important;width:128px !important;}
+.n2s-imgajaxpage .n2s-photo-thumb:hover .checked{top:-3px;left:-3px;background:url("/images/removed2.png") no-repeat scroll 0 0 transparent !important;width:134px !important;height:134px !important;}
+#n2s-imgcontent{margin:0 28px;}
+.n2s-camera{background:url("/images/camera_white.png") no-repeat scroll 0 4px transparent;font-weight:bold;padding:0 14px;float:right;}
+#breadcrumb2{border-bottom:1px solid #333333;height:34px;width:720px;}
+#breadcrumb2 a:hover span{text-decoration:underline;}
+#breadcrumb2 ul{float:left;margin:0;}
+#breadcrumb2 li{float:left;}
+#breadcrumb2 span{float:right;padding-top:1px;overflow:hidden;margin-left:5px;text-overflow:ellipsis;white-space:nowrap;}
+#breadcrumb2 .active span{color:#fff;}
+#breadcrumb2 .brArrow{background:url("/images/breadArrow.png") no-repeat scroll 0 0 transparent;height:17px;margin-left:-16px;font-weight:bold;}
+#breadcrumb2 .brArrow div{float:left;margin-left:14px;height:17px;padding:0 20px 0 4px;}
+#breadcrumb2 li.active div{background-color:#C00000;}
+#breadcrumb2 li.active{background:url("/images/breadArrow2.png") no-repeat scroll 0 0 transparent;}
+.photo_save_progress{background:url("/images/ajax/ajax-loader3.gif") no-repeat scroll 0 0 transparent;height:16px;width:16px;display:none;}
+#albdescription,#specdescription{width:440px;}
+#albumForm{padding:15px 0;}
+/* PhotoEdit */
+div.n2s-movephoto{padding:5px 10px;float:left;position:relative;cursor:progress;border-radius:5px 5px 0 0;-ms-border-radius:5px 5px 0 0;-o-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;}
+div.n2s-movephoto:hover{background-color:#EEEEEE;}
+div.n2s-movephoto .n2s-movelink{font-weight:bold;}
+div.n2s-movephoto .showcasten{margin:0;display:none;background-color:#fff;left:0;z-index:100;max-height:250px;overflow:auto;border:1px solid #999999;width:200px;position:absolute;}
+div.n2s-movephoto:hover .showcasten{display:block;}
+div.n2s-movephoto .showcasten li{overflow:hidden;padding:5px;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;}
+div.n2s-movephoto .showcasten li:hover{background-color:#EEEEEE;}
+
+.slides{z-index:0;visibility:hidden;margin:0;}
+.slides.active{visibility:visible;}
+#remthex{bottom:4px;cursor:pointer;padding:10px 0;text-align:center;width:134px;}
+.thex:hover #remthex{display:block;}
+#prozessdelete{display:none;}
+#prozessdelete li{background:url("/images/ajax/ajax-loader3.gif") no-repeat scroll left top transparent;height:20px;padding-left:25px;}
+#prozessdelete li.check{background:url("/images/ajax/check.png") no-repeat scroll left top transparent;}

@@ -1,0 +1,19 @@
+<?= $this->html; ?>
+<script>
+    $(document).ready(function(){
+        $.ajaxSetup({ cache: false });
+        $("#albumForm").live('submit', function() {
+            var form = $('#albumForm');
+            var link = form.attr('action');
+            var data = form.serialize();
+            $.post(link, data, function(data) {
+                if(data.error){
+                    $('#albformarray').empty().append(data.html);
+                }else{
+                    window.location=data.html;
+                }
+            }, 'json');
+            return false;          
+        });          
+    });
+</script>

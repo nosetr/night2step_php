@@ -1,0 +1,45 @@
+<div id="timeMessage"></div>
+<?= $this->html; ?>
+<div id="timeContent">
+    <div id="timeArrey"></div>
+    <div id="ajaxload">
+        <img src="/images/ajax/ajax-loader1.gif" alt=""/>
+    </div>
+</div>
+
+<script  type="text/javascript">
+var flink='/radar/list/<?= $this->link;?>';
+var gSearchDef='<?= $this->gsearch;?>';
+var bSuppressScroll=false;
+var flistsearch=true;
+var slistsearch=true;
+if($('#archiveLink').length)
+    var arhref=$('#archiveLink').parent().attr('href');
+$(function(){
+    $(window).load(function(){
+        if(((window.flistsearch===true)&&$('#timeContent').height()<$(window).height())){
+            $('#timeContent').css('min-height',$(window).height()+'px');
+            list.first(flink);
+        }
+    });
+});
+//GeoSwitch
+$(document).click(function(event){
+    if(($(event.target).parents().index($('#geosearcher'))==-1)&&($('#geosearchinput').is(":visible"))){
+        $('#geosearchinput').hide();
+        $("#geosearchposition").show();
+        $("#resetLocButton").show();
+    }
+    if(($(event.target).parents().index($('#geosearchposition'))==0||$(event.target).parents().index($('#geosearcher'))==0)&&$('#geosearchinput').is(":hidden")){
+        $("#geosearchposition").hide();
+        $("#resetLocButton").hide();
+        $("#geosearchinput").show();
+        $('input[name=geosearch]').focus();
+        $('input[name=geosearch]').keypress(function(e){
+            if(e.which==13){
+                geosearch.find(flink);
+            }
+        });
+        }
+        });
+</script>

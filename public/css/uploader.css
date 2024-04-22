@@ -1,0 +1,25 @@
+#plupload{color: #AAA;margin-right: 10px;}
+#plupload #droparea{border:4px dashed #DDD;height: 200px;text-align: center;font-size: 13px;}
+#plupload #droparea.hover{border-color: #cc0000;}
+#plupload #droparea p{margin: 0;padding: 60px 0 0 0;font-weight: bold;font-size: 20px;}
+#plupload #droparea span{display: block;margin-bottom: 6px;}
+#plupload #browse{border: 1px solid #bbb;text-decoration: none;padding: 3px 8px;color: #464646;}
+#plupload #filelist{margin-top: 10px;}
+#plupload #filelist img{height: 60px;margin: 0 10px;vertical-align: middle;}
+#plupload #filelist .actions{position: absolute;top: 0;right: 5px;}
+ul.n2s-ajaxpage li.file{color: #AAAAAA;margin-right: 10px;border: 1px solid #DFDFDF;height: 70px;line-height: 70px;padding: 0 10px;margin-bottom: 10px;position: relative;}
+ul.n2s-ajaxpage .progressbar{line-height: 25px;position: absolute;top: 25px;right: 30px;height: 20px;}
+.rotor{background: url("/images/photo-edit.png") no-repeat scroll 4px -36px #FFFFFF;
+    height: 14px;
+    opacity: 0.5;
+    overflow: hidden;
+    text-indent: -999999px;
+    width: 4px;}
+.rotor:hover{opacity:1;}
+.deleter{background: url("/images/photo-edit.png") no-repeat scroll 4px 5px #FFFFFF;
+    height: 14px;
+    opacity: 0.5;
+    overflow: hidden;
+    text-indent: -999999px;
+    width: 4px;}
+.deleter:hover{opacity:1;}

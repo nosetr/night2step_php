@@ -1,0 +1,3 @@
+#n2s-last-content-loading  #n2s-msg-loader,#n2s-content-loading #n2s-msg-loader,#n2s-content-start{border: 1px solid #DDDDDD;border-radius: 10px 10px 10px 10px;-ms-border-radius: 10px 10px 10px 10px;-o-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;color: #999999;margin: 5px 0;padding: 3px;text-align: center;}
+#n2s-content-start{background-color: #CC0000;border: medium none;color: #FFFFFF;cursor: pointer;}
+#n2s-content-loading #last_msg_loader img,#n2s-content-loading #first_msg_loader img{float: left;}

@@ -1,0 +1,19 @@
+<?= $this->html; ?>
+
+<script>
+    $(document).ready(function() {
+        $("#newRequest").submit(function(event) {
+            event.preventDefault(); 
+            var $form = $( this ),
+                term = $form.find( 'input[name="login_user"]' ).val(),
+                url = $form.attr( 'action' );
+            $.post( url, { login_user: term },
+            function( data ) {
+                var content = $( data );
+                $( ".n2lbox-inner" ).empty().append( content );
+            }
+            );
+        });
+        n2s.lbox.autoHeight();
+    });
+</script>

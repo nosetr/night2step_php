@@ -1,0 +1,34 @@
+<div id="rCol">    
+    <div class="n2s-grid-5">
+        <div id="modBlock">
+            <?= $this->maybefriends; ?>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="n2s-grid-6">
+        <?= $this->html; ?>
+        <div id="ajaxload" style="margin-top: 30px;">
+            <img src="/images/ajax/ajax-loader1.gif" />
+        </div>
+    </div>
+</div>
+<script  type="text/javascript">
+var aSuppressScroll = false;
+var bSuppressScroll = false;
+$(function(){
+    $(window).load(function() {
+        if ($('#messList').length) {
+            glnoti.first();
+        }
+    });
+    $(window).scroll(function(){
+        if (($(window).scrollTop() >= $('body').height() - $(window).height()-600) && window.bSuppressScroll === false && window.aSuppressScroll === true){
+            glnoti.next();
+            window.bSuppressScroll = true;
+        }
+    });
+});
+$(window).unload(function() {
+    $.post("/community/notification/ajax", { task: "runaction"} );
+});
+</script>

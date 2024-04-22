@@ -1,0 +1,20 @@
+/* Copyright 2012 inDeLA Sagl. All Rights Reserved. */
+#n2s-evJoin{float:left;position:relative;}
+#n2s-evJoin-count{background:url("/images/joined.png") no-repeat scroll 10px 5px transparent;border-left:2px solid #999999;border-right:2px solid #999999;color:#999999;cursor:default;float:left;font-size:50px;font-weight:bold;line-height:47px;margin:0 10px;min-height:48px;padding-left:58px;padding-right:10px;}
+#n2s-evJoin-list-array{display:none;position:absolute;top:48px;padding-top:12px;}
+#n2s-evJoin-list{background-color:#FFFFFF;border:1px solid #ADADAD;border-radius:8px 8px 8px 8px;-ms-border-radius:8px 8px 8px 8px;-o-border-radius:8px 8px 8px 8px;-webkit-border-radius:8px 8px 8px 8px;-moz-border-radius:8px 8px 8px 8px;box-shadow:0 5px 10px rgba(0, 0, 0, 0.3);padding:5px;position:relative;width:300px;z-index:150;}
+#n2s-evJoin:hover #n2s-evJoin-list-array{display:block;}
+.n2s-evJoin-nList{cursor:default;border-top:1px dotted #CCCCCC;margin-top:10px;min-height:10px;position:relative;}
+.n2s-evJoin-nList span{background-color:#FFFFFF;padding:0 5px;position:absolute;top:-8px;}
+#joinEvent{height:28px;margin:15px 0;position:relative;width:240px;}
+#joinEvent-loading{display:none;}
+#joinEvent-buttons{float:right;font-size:10px;}
+#joinEvent-buttons div{float:left;}
+#joinEvent-loading,#joinEvent-text{text-align:center;}
+#EventGList{margin-top:10px;padding:10px 0px;border-top:1px solid rgb(153, 153, 153);}
+#EventGList-loading{display:none;margin:7px 0;}
+#EventGList-buttons{float:left;}
+#EventGList-text{margin:5px 0;}
+#EventGList-desc{margin:7px 0;}
+.blogDate{background:none repeat scroll 0 0 #CC0000;border-radius:4px 4px 4px 4px;box-shadow:1px 2px 2px rgba(0, 0, 0, 0.5);color:#FFFFFF;cursor:default;display:inline-block;float:left;font-size:25px;font-weight:bold;height:50px;margin:3px 13px 0 0;padding:5px 0;text-align:center;text-transform:uppercase;width:43px;}
+.blogDate span{font-size:12px;float:left;width:100%;}
